@@ -2,7 +2,7 @@
 :root {
   --main-color: #e1a541;
   --main-alpha-color: rgba(225, 165, 65, 0.2);
-  --second-color: #191919;
+  --second-color: rgb(25, 25, 25);
   --third-color: #fa5050;
   --white-color: #fff;
   --gray-color: #ccc;
@@ -13,6 +13,8 @@
   --text-color: #222;
   --link-color: #222;
   --font: "Philosopher", sans-serif;
+  --max-width: 1200px;
+  --header-height: 4rem;
 }
 
 /* RESET */
@@ -34,36 +36,12 @@ body {
   margin: 0;
   overflow-x: hidden;
   color: var(--text-color);
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 a {
   color: var(--link-color);
   text-decoration: none;
-}
-
-h1 {
-  margin: 0;
-  font-size: 5rem;
-}
-h2 {
-  margin: 0;
-  font-size: 2rem;
-}
-h3 {
-  margin: 0;
-  font-size: 1.25rem;
-}
-h4 {
-  margin: 0;
-  font-size: 1rem;
-}
-h5 {
-  margin: 0;
-  font-size: 0.85rem;
-}
-h6 {
-  margin: 0;
-  font-size: 0.7rem;
 }
 
 ul {
@@ -79,4 +57,169 @@ img {
 
 p {
   line-height: 1.6rem;
+}
+
+/* SITE STYLES */
+.header {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  bottom: 0;
+  padding: 0.8rem 2rem;
+
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--black-color);
+}
+.header > .wraper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo a {
+  color: var(--main-color);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Media Querys */
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    position: sticky;
+    top: 0;
+    padding: 0.5rem;
+    height: calc(var(--header-height) - 0.5rem);
+  }
+  .logo a {
+    margin-left: 1rem;
+  }
+}
+
+/****************************** COMPONENTS *************************/
+
+/* Hero Image */
+.hero-image {
+  background-image: var(--hero-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.hero-image-content {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--black-alpha-color);
+  color: var(--white-color);
+  padding-bottom: 1rem;
+}
+
+.hero-image-title {
+  /* font-size: calc(32px + (64 - 32) * ((100vw - 300px) / (1600 - 300))); */
+  font-size: 7.5vw;
+}
+
+.hero-image-phrase,
+.hero-image-btn {
+  margin: 1rem 0;
+  font-size: 3vw;
+}
+
+/* Menu */
+.menu {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: var(--header-height);
+  background-color: var(--black-alpha-color);
+  display: flex;
+  flex-direction: column;
+  transform: translate(0, 7%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+.menu.is-active {
+  pointer-events: auto;
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.menu a {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--main-color);
+}
+.menu a:hover {
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+.menu-btn {
+  font-size: 2rem;
+  border: none;
+  outline: thin solid var(--main-color);
+  color: var(--main-color);
+  border-color: var(--main-color);
+  background-color: var(--alpha-alpha-color);
+  cursor: pointer;
+}
+.menu-btn svg {
+  fill: var(--main-color);
+}
+
+/* media */
+@media screen and (min-width: 1024px) {
+  .menu-btn {
+    display: none;
+  }
+  .menu {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    width: auto;
+    flex-direction: row;
+  }
+  .menu a {
+    padding: 0;
+    margin: 0 1rem;
+  }
+  .menu a:hover {
+    background-color: transparent;
+  }
+}
+
+/* *End Menu* */
+
+/************************ UTILITIES ***********************/
+
+.d-none {
+  display: none;
+}
+
+.hero-image-btn {
+  border: 0.1rem solid var(--main-color);
+  color: var(--main-color);
+  padding: 1rem;
+  display: inline-block;
+}
+.hero-image-btn:hover {
+  background-color: var(--main-alpha-color);
+  transition: 0.5s ease;
+}
+.wraper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
 }
