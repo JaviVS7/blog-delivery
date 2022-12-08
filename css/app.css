@@ -44,6 +44,30 @@ a {
   color: var(--link-color);
   text-decoration: none;
 }
+h1 {
+  margin: 0;
+  font-size: 5rem;
+}
+h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
 
 ul {
   list-style: none;
@@ -105,7 +129,7 @@ p {
   background-image: var(--hero-image);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-attachment: fixed;
   overflow: hidden;
   width: 100%;
@@ -214,6 +238,24 @@ p {
 }
 
 /* *End Menu* */
+
+/* Blog */
+.blog {
+  min-height: 100vh;
+  background-color: darkcyan;
+}
+.gallery {
+  min-height: 100vh;
+  background-color: cadetblue;
+}
+.about {
+  min-height: 100vh;
+  background-color: lightblue;
+}
+.footer {
+  min-height: 50vh;
+  background-color: #222;
+}
 
 /************************ UTILITIES ***********************/
 
