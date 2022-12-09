@@ -14,7 +14,7 @@
   --text-color: #222;
   --link-color: #222;
   --font: "Philosopher", sans-serif;
-  --max-width: 1200px;
+  --max-width: 1400px;
   --header-height: 4rem;
 }
 
@@ -244,15 +244,32 @@ p {
 
 /* *End Menu* */
 
+/* GALLERY */
+
+.gallery {
+  min-height: 100vh;
+  padding-top: 3.5rem;
+}
+.gallery-title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+.separator {
+  border-bottom: 0.15rem solid var(--gray-light-color);
+  margin: 1rem 0;
+}
+
+/* END GALLERY */
+
 /* Blog */
 .blog {
   min-height: 100vh;
   background-color: darkcyan;
 }
-.gallery {
-  min-height: 100vh;
-  background-color: cadetblue;
-}
+
 .about {
   min-height: 100vh;
   background-color: lightblue;
